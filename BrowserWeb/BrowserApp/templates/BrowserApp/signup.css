@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.left-panel {
+    border-right: 1px solid grey;
+}

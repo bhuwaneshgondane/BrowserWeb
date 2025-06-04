@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .container {
+            display: flex;
+            border-radius: 20px;
+            margin: 20px;
+            gap: 20px;
+        }
+
+        .left-panel, .right-panel {
+            flex: 1;
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .left-panel {
+            border-right: 1px solid grey;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Sign Up</title>
+</head>
+<body>
+
+<h1 class="text-center mb-4">Welcome to SignUp</h1>
+<form method="POST">
+    {% csrf_token %}
+    <div class="container">
+        <div class="left-panel">
+            <h4 class="mb-4">General Information</h4>
+            <div class="form-group">
+                <label for="name">Full Name :</label>
+                <input type="text" id="name" name="name" placeholder="Vijay Singh" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="xyz@gmail.com" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone :</label>
+                <input type="text" id="phone" name="phone" placeholder="10 numbers mobile number">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender :</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="desgination">Designation :</label>
+                <input type="text" id="desgination" name="desgination" placeholder="Software Developer">
+            </div>
+            <div class="form-group">
+                <label for="company">Company Name :</label>
+                <input type="text" id="company" name="company" placeholder="Wipro">
+            </div>
+        </div>
+        <div class="right-panel">
+            <h4 class="mb-4">Personal Details</h4>
+            <div class="form-group">
+                <label for="residence">Residence Type :</label>
+                <select id="residence" name="residence" required>
+                    <option value="">Select Residence Type</option>
+                    <option value="Owned">Owned</option>
+                    <option value="rent">Rent</option>
+                    <option value="cp">Company Provided</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="monthly">Monthly Income :</label>
+                <input type="text" id="monthly" name="monthly" placeholder="Rs.50000" required>
+            </div>
+            <div class="form-group">
+                <label for="loan">Previous Loan</label>
+                <select id="loan" name="loan">
+                    <option value="">Select Loan Type</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="marital">Marital Status:</label>
+                <select id="marital" name="marital">
+                    <option value="">Select Marital Status</option>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dependents">Number of Dependents:</label>
+                <input type="number" id="dependents" name="dependents" placeholder="Number of Family Members">
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="Pune" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" placeholder="Maharashtra" required>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <button type="submit" class="button">Sign Up</button>
+    </div>
+</form>
+</body>
+</html>
